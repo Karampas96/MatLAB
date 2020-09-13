@@ -101,14 +101,22 @@ hold off
 % Welches ist die Messstation mit der grössten mittleren Regenmenge pro Jahr, 
 % und welches ist die Messstation mit der kleinsten mittleren Regenmenge pro Jahr.
 
-% ToDo: Check all stations with a for loop!
-Mean_Rain = groupsummary(MaxStationData,'year','mean','rain');
-[~,RainMaxIndex] = max(Mean_Rain.mean_rain);
-[~,RainMinIndex] = min(Mean_Rain.mean_rain);
-% ToDo: Max_Rain without int16
-Max_Rain = Mean_Rain.year(RainMaxIndex);
-% ToDo: Min_Rain without int16
-Min_Rain = Mean_Rain.year(RainMinIndex);
+Max_Rain_old = 0; Min_Rain_old = 0;
+
+for k = 1:(length(Stations))
+    Data = SortedTable(SortedTable.station == Stations{k},:);
+    Mean_Rain = groupsummary(Data,'year','mean','rain');
+    RainMax = max(Mean_Rain.mean_rain);
+    RainMin = min(Mean_Rain.mean_rain);
+    if Max_Rain_old < RainMax
+        Max_Rain_old = RainMax;
+        MaxRainStation = Stations{k};
+    end
+    if k == 1 || Min_Rain_old > RainMin
+        Min_Rain_old = RainMin;
+        MinRainStation = Stations{k};
+    end
+end
 %% Aufgabe 9:
 % Zeichnen Sie eine Scatterplot, welcher die Regenmenge und die Temperatur einer 
 % Messstation gegenüberstellt. Beschriften Sie das Diagramm mit Titel, X-Achse 
@@ -122,7 +130,12 @@ xlabel('temperature')
 % Vergleichen Sie die Maximal-Temperaturen dieser zwei Messstationen in einem 
 % Boxplot.
 
-
+Station_1 = SortedTable(SortedTable.station == Stations{1},:);
+boxplot(Station_1.tmax, Station_1.year, 'Colors', 'b')
+hold on
+Station_2 = SortedTable(SortedTable.station == Stations{2},:);
+boxplot(Station_2.tmax, Station_2.year, 'Colors', 'r')
+hold off
 %% Clear temporary variables
 
 clear opts
