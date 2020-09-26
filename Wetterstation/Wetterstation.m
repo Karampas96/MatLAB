@@ -57,8 +57,8 @@ removedRows = height(weatherD) - height(wDfixed);
 % anzeigt. Weshalb ist das Ergebnis nicht sinnvoll?
 
 % Die Tabelle wird nach Jahr und Monat sortiert.
-%sortedD = sortrows(wDfixed, [1 2]);            % select sort criteria by column index
-sortedD = sortrows(wDfixed, {'year', 'month'}); % select sort criteriy by column name
+%sortedD = sortrows(wDfixed, [1 2]);            
+sortedD = sortrows(wDfixed, {'year', 'month'});
 
 % Hier wird die Maimxal-Temperatur über die Jahre angezeigt.
 plot( sortedD.year, sortedD.tmax);
@@ -89,12 +89,12 @@ wDfixed.AvgTemp = (wDfixed.tmax + wDfixed.tmin)/2;
 
 %in case more than one column is selected we need {}
 meanTemp = groupsummary( wDfixed, 'year', {'mean','median'}, {'tmax', 'tmin'} ); 
-hold off; % just to avoid that the graph contains old stuff in case of reptition of the same section!
 plot(meanTemp.year, meanTemp.mean_tmax, "-*");
 hold on;
 plot(meanTemp.year, meanTemp.median_tmax, "-+");    
 plot(meanTemp.year, meanTemp.mean_tmin, "-^" );
 plot(meanTemp.year, meanTemp.median_tmin, "-<" );
+hold off;
 %% Aufgabe 8:
 % Welches ist die Messstation mit der grössten mittleren Regenmenge pro Jahr, 
 % und welches ist die Messstation mit der kleinsten mittleren Regenmenge pro Jahr.
