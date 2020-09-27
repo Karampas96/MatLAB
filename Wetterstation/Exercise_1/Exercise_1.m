@@ -104,18 +104,21 @@ meanRainPerStation = groupsummary(wDfixed, {'station', 'year'}, 'mean', 'rain');
 minRainS = wDfixed.station(idxMin);
 maxRainS = wDfixed.station(idxMax);
 %% Aufgabe 9:
-% Zeichnen Sie eine Scatterplot, welcher die Regenmenge und die Temperatur einer 
-% Messstation gegenüberstellt. Beschriften Sie das Diagramm mit Titel, X-Achse 
+% Zeichnen Sie eine Scatterplot, welcher die Regenmenge und die max Temperatur 
+% einer Messstation gegenüberstellt. Beschriften Sie das Diagramm mit Titel, X-Achse 
 % und Y-Achse.
 
-scatter(maxStationD.tmax, maxStationD.rain ); % Gewählt: tmax
+scatter(maxStationD.tmax, maxStationD.rain, 'filled');
+title('Scatterplot temperature vs amount of water')
+ylabel('amount of water')
+xlabel('temperature')
 %% Aufgabe 10:
 % Vergleichen Sie die Maximal-Temperaturen zwei Messstationen in einem Boxplot.
 
 minD = wDfixed(wDfixed.station == minRainS,:);
 maxD = wDfixed(wDfixed.station == maxRainS,:);
 
-ismember(minD, wDfixed) % Wieso?
-minAndMaxD = union(minD, maxD)
+ismember(minD, wDfixed);
+minAndMaxD = union(minD, maxD);
 
 boxplot(minAndMaxD.tmax, minAndMaxD.station);
