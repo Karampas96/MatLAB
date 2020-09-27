@@ -31,7 +31,7 @@ opts.EmptyLineRule = "read";
 opts = setvaropts(opts, ["af", "station"], "EmptyFieldRule", "auto");
 
 % Import the data
-weatherD = readtable("C:\Users\Ioannis\Desktop\Github Repos\MATLAB\Wetterstation\MET Office Weather Data.csv", opts);
+weatherD = readtable("C:\Users\Ioannis\Desktop\Github_Repos\MATLAB\Wetterstation\MET_Office_Weather_Data.csv", opts);
 
 % Clear temporary variables
 clear opts
@@ -40,7 +40,7 @@ clear opts
 % dem Typ Table erzeugt. Führen Sie den Befehl summary aus. Welche Informationen 
 % von Summary sind nicht hilfreich?
 
-summary(weatherD)
+summary(weatherD);
 %% *Aufgabe 3:*
 % Ergänzen Sie ihr Skript so, dass eine neue Variable wDfixed erzeugt wird, 
 % die nur noch gültigen Werte enthält. Wie viele Zeilen wurden aus der Tabelle 
@@ -68,8 +68,7 @@ plot( sortedD.year, sortedD.tmax);
 
 % mit summary können wir das einfach ablesen
 groupSum = groupsummary(wDfixed, 'station');
-
-[maxGroupCount, index] = max(groupSum.GroupCount);
+[~, index] = max(groupSum.GroupCount);
 maxStation = groupSum.station(index);
 maxStationD = wDfixed(wDfixed.station==maxStation,:);
 %% Aufgabe 6:
@@ -77,6 +76,11 @@ maxStationD = wDfixed(wDfixed.station==maxStation,:);
 % pro Jahr enthält. Verwenden Sie die Funktion _*groupsummary(..)*_ und stellen 
 % Sie die durchschnittlichen Maximal-Temperaturen seit Messbeginn in einem Plot 
 % dar. Verwenden Sie die Funktion _*'mean'*_ für die Berechnung.
+
+meanTemp = groupsummary( wDfixed, 'year', 'mean', {'tmax', 'tmin'}); 
+plot(meanTemp.year, meanTemp.mean_tmax, "-*");
+hold on;
+plot(meanTemp.year, meanTemp.mean_tmin, "-^" );
 %% *Aufgabe 7:*
 % Führen Sie dieselbe Auswertung nochmals durch. Verwenden Sie diesmal aber 
 % die Funktion 'median' und zeichnen Sie den Verlauf in derselben Grafik auf. 
@@ -85,41 +89,33 @@ maxStationD = wDfixed(wDfixed.station==maxStation,:);
 % Vergleichen Sie die Daten und kommentieren Sie, Entspricht die Grafik ihren 
 % Erwartungen?
 
-wDfixed.AvgTemp = (wDfixed.tmax + wDfixed.tmin)/2;
-
-%in case more than one column is selected we need {}
-meanTemp = groupsummary( wDfixed, 'year', {'mean','median'}, {'tmax', 'tmin'} ); 
-plot(meanTemp.year, meanTemp.mean_tmax, "-*");
-hold on;
-plot(meanTemp.year, meanTemp.median_tmax, "-+");    
-plot(meanTemp.year, meanTemp.mean_tmin, "-^" );
-plot(meanTemp.year, meanTemp.median_tmin, "-<" );
+%wDfixed.AvgTemp = (wDfixed.tmax + wDfixed.tmin)/2;
+medianTemp = groupsummary( wDfixed, 'year', 'median', {'tmax', 'tmin'}); 
+plot(medianTemp.year, medianTemp.median_tmax, "-+");    
+plot(medianTemp.year, medianTemp.median_tmin, "-<" );
 hold off;
 %% Aufgabe 8:
 % Welches ist die Messstation mit der grössten mittleren Regenmenge pro Jahr, 
 % und welches ist die Messstation mit der kleinsten mittleren Regenmenge pro Jahr.
 
-meanTempPerStation = groupsummary(wDfixed, {'station', 'year'}, {'mean', 'median'}, {'tmin', 'tmax'});
-[minTs, idxMin] = min( meanTempPerStation.mean_tmin );
-[maxTs, idxMax] = max( meanTempPerStation.mean_tmax );
-minS = wDfixed.station(idxMin);
-maxS = wDfixed.station(idxMax);
+meanRainPerStation = groupsummary(wDfixed, {'station', 'year'}, 'mean', 'rain');
+[~, idxMin] = min( meanRainPerStation.mean_rain );
+[~, idxMax] = max( meanRainPerStation.mean_rain );
+minRainS = wDfixed.station(idxMin);
+maxRainS = wDfixed.station(idxMax);
 %% Aufgabe 9:
 % Zeichnen Sie eine Scatterplot, welcher die Regenmenge und die Temperatur einer 
 % Messstation gegenüberstellt. Beschriften Sie das Diagramm mit Titel, X-Achse 
 % und Y-Achse.
 
-y = wDfixed( wDfixed.station == maxS, 'rain');
-x = wDfixed( wDfixed.station == maxS, 'tmax');
-scatter(x.tmax, y.rain );
+scatter(maxStationD.tmax, maxStationD.rain ); % Gewählt: tmax
 %% Aufgabe 10:
-% Vergleichen Sie die Maximal-Temperaturen dieser zwei Messstationen in einem 
-% Boxplot.
+% Vergleichen Sie die Maximal-Temperaturen zwei Messstationen in einem Boxplot.
 
-minD = wDfixed( wDfixed.station == minS, :  );
-maxD = wDfixed( wDfixed.station == maxS, : );
+minD = wDfixed(wDfixed.station == minRainS,:);
+maxD = wDfixed(wDfixed.station == maxRainS,:);
 
-ismember( minD, wDfixed );
-minAndMaxD = union( minD, maxD);
+ismember(minD, wDfixed) % Wieso?
+minAndMaxD = union(minD, maxD)
 
 boxplot(minAndMaxD.tmax, minAndMaxD.station);

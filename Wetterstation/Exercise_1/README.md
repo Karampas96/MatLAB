@@ -4,10 +4,10 @@
 
 Die Kursteilnehmer
 
-* können CSV Dateien importieren.
-* kennen den Datentyp Table.
-* kennen die Grundoperationen des Datentyps Table.
-* können mehrere Datenreihen in einem Plot aufzeichnen.
+* können CSV Dateien importieren
+* kennen den Datentyp Table
+* kennen die Grundoperationen des Datentyps Table
+* können mehrere Datenreihen in einem Plot aufzeichnen
 
 ## Aufgabenstellung
 
