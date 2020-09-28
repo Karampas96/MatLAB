@@ -69,6 +69,7 @@ plot( sortedD.year, sortedD.tmax);
 % mit summary können wir das einfach ablesen
 groupSum = groupsummary(wDfixed, 'station');
 [~, index] = max(groupSum.GroupCount);
+
 maxStation = groupSum.station(index);
 maxStationD = wDfixed(wDfixed.station==maxStation,:);
 %% Aufgabe 6:
@@ -117,8 +118,6 @@ xlabel('temperature')
 
 minD = wDfixed(wDfixed.station == minRainS,:);
 maxD = wDfixed(wDfixed.station == maxRainS,:);
-
 ismember(minD, wDfixed);
 minAndMaxD = union(minD, maxD);
-
 boxplot(minAndMaxD.tmax, minAndMaxD.station);
