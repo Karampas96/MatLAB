@@ -1,13 +1,11 @@
 # Wetterstation
 
-## Lernziele
+## Ziele
 
-Die Kursteilnehmer
-
-* können CSV Dateien importieren
-* kennen den Datentyp Table
-* kennen die Grundoperationen des Datentyps Table
-* können mehrere Datenreihen in einem Plot aufzeichnen
+* CSV Dateien importieren
+* Datentyp Table
+* Grundoperationen des Datentyps Table
+* mehrere Datenreihen in einem Plot aufzeichnen
 
 ## Aufgabenstellung
 
