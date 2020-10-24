@@ -26,7 +26,7 @@ clear opts
 
 wDfixed = rmmissing(weatherD);
 removedRows = height(weatherD) - height(wDfixed);
-%% compute dataset of year 20202
+%% compute dataset of year 2020
 
 data2020 = wDfixed(wDfixed.year==2020,:);
 test = categories(data2020.station)
