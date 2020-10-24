@@ -78,7 +78,7 @@ Wir verwenden für diese Übung denselben Datentype wie in Übung 1 (**`MET_Offi
 
 Wir verwenden die Rechenregeln, um diejnigen Datensätze zu selektieren, die bezülgich **`tmin`** innerhalb der 25% Quartile liegen. 
 
-![Quartile](..\images\quartile.PNG)
+![Quartile](../images/quartile.PNG)
 
 1. Erstellen von Teilmengen:
    1. Konstruieren Sie die Teilmenge der Daten des Jahres 2020 und halten Sie diese Menge in der Variable data2020 fest (entfernen Sie ungültige Werte) 
