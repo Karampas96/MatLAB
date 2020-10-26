@@ -26,6 +26,7 @@ clear opts
 
 % Remove missing entries
 wDfixed = rmmissing(weatherD);
+
 %% Aufgabe 1: Bereitstellen von Datensets
 % Ausgangslage für die Graphen sind immer Daten.  Wir brauchen also geeignete 
 % Datensets, um sie entsprechend darzustellen.
@@ -44,6 +45,7 @@ wDfixed = rmmissing(weatherD);
 yearlyMeanPerStation = groupsummary(wDfixed,{'station','year'},{'median','mean'},{'tmin','tmax','sun','rain'});
 monthlyMeanPerStation = groupsummary(wDfixed,{'station','year','month'},{'median','mean'},{'tmin','tmax','sun','rain'});
 monthlyMean = groupsummary(wDfixed,'month',{'median','mean'},{'tmin','tmax','sun','rain'});
+
 %% Aufgabe 2: 
 % Zeichnen Sie einen Boxplot, welcher die |_*monthlyMeanPerStation.median_tmin_ 
 % Werte für alle Monate anzeigt. Funktion _*boxplot(..)*_. Wenn Sie nicht sicher 
@@ -57,6 +59,7 @@ boxplot(monthlyMeanPerStation.median_tmin, monthlyMeanPerStation.month);
 xlabel("month");
 ylabel("median tmin");
 title("tmin variation per month from 1942 to 2020")
+
 %% Aufgabe 3: 
 % Zeichnen Sie ein Balkendiagramm des Wertes |_*monthlyMean|.|median_rain*_.| 
 % Matlab Funktion _*bar(..)*_.
@@ -67,15 +70,17 @@ bar(monthlyMean.median_rain);
 xlabel("month")
 ylabel("rain in mm")
 title("median rain per month")
+
 %% Aufgabe 4: 
 % Zeichnen Sie dasselbe Diagramm wie in 2 aber mit einer y Achsenbeschränkung 
 % von [50 90]. (Matlab Funktion <https://www.mathworks.com/help/matlab/ref/xlim.html 
 % ylim(..)>) Vergleichen Sie das Resultat mit 2. Was sagen Sie dazu?
 
 ylim([50 90]);
-%with these limits, the diagram suggests that there is a huge difference in
-%rain fall between Nov and May which is not really true
-%hence the selection of limits influences the intepretation of the diagram!
+% with these limits, the diagram suggests that there is a huge difference in
+% rain fall between Nov and May which is not really true
+% hence the selection of limits influences the intepretation of the diagram!
+
 %% Aufgabe 5: 
 % Zeichen Sie ein Balkendiagramm der Werte |_*monthlyMean|.|median_tmin*_ und 
 % _*monthlyMean|.|median_tmax*_.| Es soll einen Balken für tmin und tmax für jeden 
@@ -91,6 +96,7 @@ hold on
 plot( data );
 legend("median tmin", "median tmax");
 hold off
+
 %% Aufgabe 6:
 % Zeichnen Sie ein Linien-Diagramm, welches sowohl die Werte |_*monthlyMean|.|median_rain*_|  
 % als auch |_*monthlyMean|.|median_sun*_|  darstellt. Hier haben wir offensichtlich 
@@ -117,6 +123,7 @@ hold off
 xlabel("month")
 title("rain and sunshine over the year")
 legend("rain", "sun")
+
 %% Aufgabe 7:
 % Kombinieren Sie Diagramm 1, 2 und 5 in einem Chart. Alle drei Diagramme sollen 
 % untereinanderstehen. Verwenden Sie die Matlab Funktionen tiledlayout(..) und 
@@ -132,20 +139,20 @@ hold off
 tiledlayout(3,1);
 l1 = nexttile;
 
-%aus Aufgabe 1
+% aus Aufgabe 1
 boxplot(l1, monthlyMeanPerStation.median_tmin, monthlyMeanPerStation.month);
 xlabel(l1, "month");
 ylabel(l1, "median tmin");
 title(l1, "tmin variation per month from 1942 to 2020")
 
-%aus Aufgabe 2
+% aus Aufgabe 2
 l2 = nexttile;
 bar(l2, monthlyMean.median_rain);
 xlabel(l2, "month");
 ylabel(l2, "rain in mm");
 title(l2, "median rain per month");
 
-%aus Aufgabe 5
+% aus Aufgabe 5
 l3 = nexttile;
 yyaxis left
 
@@ -159,6 +166,7 @@ hold off;
 xlabel(l3,"month")
 title(l3,"rain and sunshine over the year")
 tiledlayout(1,1)
+
 %% Aufgabe 8:
 % Erstellen Sie ein Histogramm der Daten |_*yearlyMeanPerStation.median_tmin*_.| 
 % Verwenden Sie dazu die Funktion _*histogram(..)*_. Speichern Sie den Rückgabewert 
