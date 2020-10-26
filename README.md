@@ -10,9 +10,7 @@ This repository contains a collection of MATLAB scripts that I have implemented 
 
 ## Contributing
 
-This is a personal learning project for me.
-
-Please feel free to fork this repo. Pull request to submit more programs.
+This is a personal learning project for me. Please feel free to fork this repo. Pull request to submit more programs.
 
 ## Feedback
 
