@@ -1,15 +1,23 @@
 # MATLAB Examples
 
-**MATLAB** is a high-performance language developed by MathWorks for technical computing, visualization, and programming.
+This repository contains a collection of MATLAB scripts that I have implemented for my personal use.
 
 
-# List of programs
+## List of programs
 
 - [Mandelbrot set](https://github.com/YodaCh96/MATLAB/tree/master/mandelbrot_set)
 - [Weather station](https://github.com/YodaCh96/MATLAB/tree/master/weather_station)
 
-# Contributing
+## Contributing
 
 This is a personal learning project for me.
 
 Please feel free to fork this repo. Pull request to submit more programs.
+
+## Feedback
+
+If you find any bug or have any suggestion, please do file issues. I am graceful for any feedback and will do my best to improve this package.
+
+## License
+
+[MIT](LICENSE) © 2020 Ioannis Christodoulakis
