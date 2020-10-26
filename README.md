@@ -2,7 +2,6 @@
 
 This repository contains a collection of MATLAB scripts that I have implemented for my personal use.
 
-
 ## List of programs
 
 - [Mandelbrot set](https://github.com/YodaCh96/MATLAB/tree/master/mandelbrot_set)
