@@ -1,9 +1,7 @@
-%% Prüfung 1 (Aufgabe 3)
-% 
-% 
+%% Prüfung 1
+%% Aufgabe 3:
 % 1) Lesen Sie die Daten der Datei "*MET Office Weather Data .csv*" in die Matlab 
 % Variable _*data*_ ein.
-% *Setup the Import Options and import the data*
 
 opts = delimitedTextImportOptions("NumVariables", 8);
 
