@@ -40,7 +40,7 @@ beschreiben.
 
 ***© Springer-Verlag Berlin Heidelberg 2010***
 
-## Wahlkampf-Optimierung
+## [Wahlkampf-Optimierung](https://github.com/YodaCh96/MATLAB/blob/master/linear%20optimization/WahlkampfOptimierung.m)
 
 Ein Politiker möchte in seinem Wahlkreis gewinnen. Dazu benötigt er mindestens 50% der Stimmen in allen Gebieten seines Wahlkreises (Stadt, Vorstadt, Land)
 
@@ -60,7 +60,7 @@ Das möchte er durch einen geschickten Wahlkamp erreichen. Durch eine Studie wei
 a) Wie erreicht der Politiker sein Ziel, 50% der Stimmen in jedem Wahlkreis mit möglichst wenig Kosten?
 b) Wie erreicht der Politiker sein Zeil, 50% aller Stimmen egal aus welchem Wahlkreis mit möglichst wenig Kosten?
 
-## Vitamin Produktion Optimierung
+## [Vitamin Produktion Optimierung](https://github.com/YodaCh96/MATLAB/blob/master/linear%20optimization/VitaminProduktionOptimierung.m)
 
 Aus zwei Substanzen S1und S2 soll ein Vitaminpräparat hergestellt werden. Der Gehalt an den Vitaminen A, B, C und D in 1000 I.E. (internationale Einheiten) je g dieser Substanzen, der Mindestbedarf pro Tagin 1000 I.E. in dem herzustellenden Präparat und die Kosten a) für S1und b) für S2 (in EUR/g) sind:
 
@@ -76,7 +76,7 @@ Das Präparat soll durch Mischung von S1 und S2 so hergestellt werden, dass die 
 Wie muss gemischt werden? Wie hoch sind die minimalen Kosten?
 Bei welchen Vitaminen ist der Mindest bedarf exakt eingehalten, bei welchen wird er im Minimalpunkt ̈uberschritten?
 
-## Studiums-Aufwand Optimierung
+## [Studiums-Aufwand Optimierung](https://github.com/YodaCh96/MATLAB/blob/master/linear%20optimization/StudiumsAufwandOptimierung.m)
 
 Ein Studentin möchte ihren Aufwand optimieren um eine möglichst gute Durchschnittsnote zu erzielen.
 Sie belegt die Fächer Informatik, Mathematik und Physik. In jedem der drei Fächer muss die Note 4 geschrieben werden, um den Kurs abzuschliessen.
@@ -89,7 +89,7 @@ Da ihr nicht alle Fächer gleich gut liegen, überlegt Sie sich, wieviele Stunde
 Informatik und Mathematik haben ein doppeltes Notengewicht. Die Physiknote zählt einfach.
 Die Prüfung findet in 8 Wochen statt. D.h sie hat maximal 400h Zeit zum Lernen.
 
-## Anstellungsoptimierung
+## [Anstellungsoptimierung](https://github.com/YodaCh96/MATLAB/blob/master/linear%20optimization/AnstellungsOptimierung.m)
 
 Ein Montagewerk beschäftigt gelernte Arbeiter und Lehrlinge. Ein störungsfreier Ablauf erfordert, dass mindestens 120 Arbeitsplätze besetzt sind; andererseits sind maximal 150 Arbeitsplätze verfügbar. Mindestens ein Fünftel aller stellen sind durch Lehrlinge zu besetzen; die Anzahl der Lehrlinge soll aber mindestens um 20 kleiner sein, als die Anzahl gelernter Arbeiter.
 
@@ -99,7 +99,7 @@ c)	Ein Arbeiter verdient 4'500 Franken im Monat, ein Lehrling 1'000 Franken.
 
 Wie viele Arbeiter und Lehrlinge wird die Firma einstellen, wenn die Lohnsumme möglichst klein sein soll?
 
-## Produktionsoptimierung
+## [Produktionsoptimierung](https://github.com/YodaCh96/MATLAB/blob/master/linear%20optimization/ProduktionsOptimierung.m)
 	
 Ein Spielwarenfabrik stellt Dreiräder (D), Roller (R) und Fahrräder (F) her. Der Reingewinn beträgt 10 Fr. für D, 15 Fr. für R und 40 Fr. für F (immer pro Stück). Bestimme den grössten Gewinn, wenn infolge der Nachfrage und der Produktionsbedingungen folgende Einschränkungen zu beachten sind:
 
@@ -107,7 +107,7 @@ a)	In einem Monat werden insgesamt 800 Stück hergestellt.
 b)	Monatlich sind mindestens 200 D und 200 R zu produzieren.
 c)	Es dürfen monatlich höchstens 400 D und 500 R hergestellt werden, zusammen aber nicht weniger als 500.
 
-## Belagsoptimierung
+## [Belagsoptimierung](https://github.com/YodaCh96/MATLAB/blob/master/linear%20optimization/BelagsOptimierung.m)
 
 Die Bodenfläche eines Schulhauses beträgt 8000 m2 und soll mit zwei Sorten Belag ausgestattet werden. Die erste Sorte kostet Fr. 20.-/ m2, die zweite Sorte Fr. 30.-/ m2.  Die Reinigungskosten pro Jahr sind bei der zweiten Sorte nur halb so gross, wie bei der ersten Sorte,  bei der sie Fr. 3.-/m2 ausmachen.
 Wie ist die Auswahl zu treffen, wenn Fr. 180'000.- bis 210'000.- für die Gesamtkosten eingeplant sind,  und die Reinigungskosten möglichst klein gehalten werden sollen?
