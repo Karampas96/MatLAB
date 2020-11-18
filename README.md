@@ -6,7 +6,7 @@ This repository contains a collection of MATLAB scripts that I have implemented 
 
 - [Mandelbrot set](https://github.com/YodaCh96/MATLAB/tree/master/mandelbrot_set)
 - [Weather station](https://github.com/YodaCh96/MATLAB/tree/master/weather_station)
-- [Linear Programming](https://github.com/YodaCh96/MATLAB/tree/master/linear_programming)
+- [Linear Optimization](https://github.com/YodaCh96/MATLAB/tree/master/linear_optimization)
 - [Vectors and Matrices](https://github.com/YodaCh96/MATLAB/tree/master/vectors_matrices)
 
 ## Contributing

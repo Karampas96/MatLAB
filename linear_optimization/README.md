@@ -66,10 +66,10 @@ Aus zwei Substanzen S1und S2 soll ein Vitaminpräparat hergestellt werden. Der G
 
 ||Gehalt in 1000 I.E. je g. S1|Gehalt in 1000 I.E. je g. S2|Mindestbedarf in 1000 I.E. in g.|
 |:-|:-:|:-:|:-:|
-Vitamin A|2|1|16|
-Vitamin B|1|0|2|
-Vitamin C|2|3|32|
-Vitamin D|2|5|40|
+|Vitamin A|2|1|16|
+|Vitamin B|1|0|2|
+|Vitamin C|2|3|32|
+|Vitamin D|2|5|40|
 |Kosten (Eur/g)|10|8|
 
 Das Präparat soll durch Mischung von S1 und S2 so hergestellt werden, dass die angegebenen Mindestmengen darin enthalten sind und die Kosten minimal sind.
@@ -117,3 +117,24 @@ Wie ist die Auswahl zu treffen, wenn Fr. 180'000.- bis 210'000.- für die Gesamt
 Ein Landwirt möchte 90 ha Land mit Kartoffeln und Zuckerrüben bebauen. Kartoffeln erfordern einen Arbeitsaufwand von 3 Tagen je ha und einen Kapitalaufwand von 400 EUR je ha. Zuckerrüben erfordern 4 Tage je ha und 200 EUR je ha. Wegen der Bodenqualität müssen mindestens 50 ha Zuckerrüben angebaut werden. Für die Bewirtschaftung der 90 ha stehen maximal 360 Arbeitstage und maximal 24.000  EUR zur Verfügung.
 
 Gesucht: optimales Anbauverhältnis zwischen Zuckerrüben und Kartoffeln
+
+## Stahllegierung Optimierung
+
+Man möchte 25 Tonnen Stahl mischen welcher eine bestimmte chemische Zusammammensetzung hat. Der neu produzierte Stahl soll 5% Kohlenstoff und 5%Molybdän enthalten.
+
+Dazu stehen verschieden Rohstoffe zur Verfügung:
+
+||Gewicht|Kolenstoff %|Molybdän %|$ / Tonne|
+|:-|:-:|:-:|:-:|:-:|
+|Barren Typ 1|5|5|3|350|
+|Barren Typ 2|3|4|3|330|
+|Barren Typ 3|4|5|4|310|
+|Barren Typ 4|6|3|4|280|
+|Legierung 1|beliebig|8|6|500|
+|Legierung 2|beliebig|7|7|450|
+|Legierung 3|beliebig|6|8|400|
+|Schrott|beliebig|3|9|400|
+
+Für die Produktion können nur ganze Barren verwendet werden. Es steht pro Barren-Typ nur ein Barren zur Verfügung. Legierungen und Schrott können in beliebiger Menge verwendet werden.
+
+Wie muss die Mischung gewählt werden, um den gewünschten Stahl mit mögichts geringen Kosten erzeugen zu können?
