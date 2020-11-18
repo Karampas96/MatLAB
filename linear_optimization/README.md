@@ -118,7 +118,7 @@ Ein Landwirt möchte 90 ha Land mit Kartoffeln und Zuckerrüben bebauen. Kartoff
 
 Gesucht: optimales Anbauverhältnis zwischen Zuckerrüben und Kartoffeln
 
-## Stahllegierung Optimierung
+## [Stahllegierung Optimierung](https://github.com/YodaCh96/MATLAB/blob/master/linear_optimization/StahlLegierungOptimierung.m)
 
 Man möchte 25 Tonnen Stahl mischen welcher eine bestimmte chemische Zusammammensetzung hat. Der neu produzierte Stahl soll 5% Kohlenstoff und 5%Molybdän enthalten.
 
