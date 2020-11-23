@@ -8,6 +8,7 @@ This repository contains a collection of MATLAB scripts that I have implemented 
 - [Weather station](https://github.com/YodaCh96/MATLAB/tree/master/weather_station)
 - [Linear Optimization](https://github.com/YodaCh96/MATLAB/tree/master/linear_optimization)
 - [Vectors and Matrices](https://github.com/YodaCh96/MATLAB/tree/master/vectors_matrices)
+- [Linear Regression](https://github.com/YodaCh96/MATLAB/tree/master/linear_regression)
 
 ## Contributing
 
