@@ -3,7 +3,7 @@
 % Erzeugen Sie einen Vector v mit 100 Datenelemente mit randn und zeichnen Sie 
 % ein Histrogramm.
 
-v = randn(1,10);
+v = randn(1,100);
 histogram(v);
 %% 
 % Erzeugen Sie einen Vector v mit 100000 Datenelement mit randn und zeichnen 
@@ -48,7 +48,7 @@ hold off;
 % v. Verwenden Sie ebenfalls randn und zeichnen Sie einen Scatterplot von v und 
 % v3. Entspricht das Diagramm ihren Erwartungen?
 
-[dim, sz] = size(v);
+[~, sz] = size(v);
 v3 = randn(1, sz);
 scatter(v, v3);
 %% 

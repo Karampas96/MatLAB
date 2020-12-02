@@ -1,11 +1,14 @@
 %% fitlm Anwendungen
+% 
+% 
 % Die nachfolgenden Beispiele sollen verwendet werden, um die Verwendung von 
 % fitlm zu üben. Die Beispiele stammen aus ganz unterschiedlichen Anwendungsgebieten. 
 % Sie geben einen kleinen Einblick in die vielfältigen Einsatzmöglichkeiten dieser 
 % Methode.
 %% Energieverbrauch für das Heizen von Wasser
 % In einem Schüler-Praktikum wurde diese Messsung gemacht um die spezifische 
-% Wärmekapazität des Wassers zu bestimmen.
+% Wärmekapazität des Wassers zu bestimmen. (Leider sind die Einheiten nicht überliefert 
+% :-( 
 % 
 % _*fitlm_daten\EnergieH2oTemp.csv*_
 % 
@@ -28,10 +31,11 @@ opts.EmptyLineRule = "read";
 
 % Import the data
 H2O_Heizen = readtable("C:\Users\Ioannis\Desktop\GitHub\MATLAB\linear_regression\data\EnergieH2oTemp.csv", opts);
-
-model1 = fitlm(H2O_Heizen.Energy, H2O_Heizen.Temperature);
-
-plotResiduals(model1, "probability");
+scatter(H2O_Heizen.Energy, H2O_Heizen.Temperature);
+fit = fitlm(H2O_Heizen.Energy, H2O_Heizen.Temperature);
+plot(fit);
+plotResiduals(fit,"probability");
+plotResiduals(fit,"fitted");
 %% Laufgeschwindigkeit vs. Herzfrequenz
 % In einem Fittnesstest wurden nachfolgende Daten aufgezeichnet: _*fitlm_daten\Conconi.csv*_
 
@@ -52,10 +56,10 @@ opts.EmptyLineRule = "read";
 
 % Import the data
 conconi = readtable("C:\Users\Ioannis\Desktop\GitHub\MATLAB\linear_regression\data\Conconi.csv", opts);
-
-model2 = fitlm(conconi.Speed, conconi.Puls);
-
-plotResiduals(model2, "probability");
+scatter(conconi.Speed, conconi.Puls);
+fitC = fitlm(conconi.Speed, conconi.Puls);
+plotResiduals(fitC,"probability");
+plot(fitC);
 %% Zusammenhang Alter zu Preis bei Antiken Uhren
 
 %% Setup the Import Options and import the data
@@ -75,6 +79,12 @@ opts.EmptyLineRule = "read";
 
 % Import the data
 antikeUhren = readtable("C:\Users\Ioannis\Desktop\GitHub\MATLAB\linear_regression\data\antikeUhren.csv", opts);
+scatter(antikeUhren.Alter, antikeUhren.Preis);
+fitAU = fitlm(antikeUhren, "Preis~Alter")
+
+plot(fitAU);
+plotResiduals(fitAU,"probability");
+plotResiduals(fitAU,"fitted");
 %% Zusammenhang Temperatur-Differenz Aussen/Innen zu Verbrauch
 
 %% Setup the Import Options and import the data
@@ -94,6 +104,13 @@ opts.EmptyLineRule = "read";
 
 % Import the data
 TempVsUsage = readtable("C:\Users\Ioannis\Desktop\GitHub\MATLAB\linear_regression\data\gas.csv", opts);
+
+scatter(TempVsUsage.temp, TempVsUsage.verbrauch);
+
+fitTU = fitlm(TempVsUsage, "verbrauch~temp")
+
+plot(fitTU);
+plotResiduals(fitTU,"probability");
 % Wodurch wird der Benzin-Verbrauch von Autos pro 100 km beeinflusst?
 % Welche Prediktoren scheinen Ihnen glaubhaft? Versuchen Sie aus. 
 
@@ -114,6 +131,15 @@ opts.EmptyLineRule = "read";
 
 % Import the data
 HpVsFuel = readtable("C:\Users\Ioannis\Desktop\GitHub\MATLAB\linear_regression\data\ps_benzin.csv", opts);
+scatter(HpVsFuel.hubraum, HpVsFuel.L_100km);
+scatter(HpVsFuel.hubraum, HpVsFuel.ps);
+scatter(HpVsFuel.cyl, HpVsFuel.L_100km);
+scatter(HpVsFuel.ps, HpVsFuel.L_100km);
+scatter(HpVsFuel.carb, HpVsFuel.L_100km);
+
+fitFuel = fitlm(HpVsFuel,"L_100km~hubraum")
+plot(fitFuel);
+plotResiduals(fitFuel,"probability");
 %% Ozongehalt im Zusammenhang mit Sonneneinstrahlung, Temperatur und Wind
 
 %% Setup the Import Options and import the data
@@ -137,7 +163,6 @@ opts = setvaropts(opts, ["Ozone", "Solar_R"], "EmptyFieldRule", "auto");
 % Import the data
 airquality = readtable("C:\Users\Ioannis\Desktop\GitHub\MATLAB\linear_regression\data\airquality.csv", opts);
 
-model2 = fitlm([airquality.Temp, airquality.Wind, airquality.Solar_R], airquality.Ozone);
-
-%plotResiduals(model, "probability");
-plotResiduals(model2)
+model = fitlm([airquality.Temp, airquality.Wind, airquality.Solar_R], airquality.Ozone)
+plot(model);
+plotResiduals(model,"probability");
