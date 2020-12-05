@@ -1,6 +1,4 @@
 %% fitlm Anwendungen
-% 
-% 
 % Die nachfolgenden Beispiele sollen verwendet werden, um die Verwendung von 
 % fitlm zu üben. Die Beispiele stammen aus ganz unterschiedlichen Anwendungsgebieten. 
 % Sie geben einen kleinen Einblick in die vielfältigen Einsatzmöglichkeiten dieser 
@@ -31,8 +29,11 @@ opts.EmptyLineRule = "read";
 
 % Import the data
 H2O_Heizen = readtable("C:\Users\Ioannis\Desktop\GitHub\MATLAB\linear_regression\data\EnergieH2oTemp.csv", opts);
+
 scatter(H2O_Heizen.Energy, H2O_Heizen.Temperature);
+
 fit = fitlm(H2O_Heizen.Energy, H2O_Heizen.Temperature);
+
 plot(fit);
 plotResiduals(fit,"probability");
 plotResiduals(fit,"fitted");
@@ -56,9 +57,13 @@ opts.EmptyLineRule = "read";
 
 % Import the data
 conconi = readtable("C:\Users\Ioannis\Desktop\GitHub\MATLAB\linear_regression\data\Conconi.csv", opts);
+
 scatter(conconi.Speed, conconi.Puls);
+
 fitC = fitlm(conconi.Speed, conconi.Puls);
+
 plotResiduals(fitC,"probability");
+plotResiduals(fitC, "fitted");
 plot(fitC);
 %% Zusammenhang Alter zu Preis bei Antiken Uhren
 
@@ -79,7 +84,9 @@ opts.EmptyLineRule = "read";
 
 % Import the data
 antikeUhren = readtable("C:\Users\Ioannis\Desktop\GitHub\MATLAB\linear_regression\data\antikeUhren.csv", opts);
+
 scatter(antikeUhren.Alter, antikeUhren.Preis);
+
 fitAU = fitlm(antikeUhren, "Preis~Alter")
 
 plot(fitAU);
@@ -104,7 +111,6 @@ opts.EmptyLineRule = "read";
 
 % Import the data
 TempVsUsage = readtable("C:\Users\Ioannis\Desktop\GitHub\MATLAB\linear_regression\data\gas.csv", opts);
-
 scatter(TempVsUsage.temp, TempVsUsage.verbrauch);
 
 fitTU = fitlm(TempVsUsage, "verbrauch~temp")
@@ -131,6 +137,7 @@ opts.EmptyLineRule = "read";
 
 % Import the data
 HpVsFuel = readtable("C:\Users\Ioannis\Desktop\GitHub\MATLAB\linear_regression\data\ps_benzin.csv", opts);
+
 scatter(HpVsFuel.hubraum, HpVsFuel.L_100km);
 scatter(HpVsFuel.hubraum, HpVsFuel.ps);
 scatter(HpVsFuel.cyl, HpVsFuel.L_100km);
@@ -138,6 +145,7 @@ scatter(HpVsFuel.ps, HpVsFuel.L_100km);
 scatter(HpVsFuel.carb, HpVsFuel.L_100km);
 
 fitFuel = fitlm(HpVsFuel,"L_100km~hubraum")
+
 plot(fitFuel);
 plotResiduals(fitFuel,"probability");
 %% Ozongehalt im Zusammenhang mit Sonneneinstrahlung, Temperatur und Wind
@@ -164,5 +172,6 @@ opts = setvaropts(opts, ["Ozone", "Solar_R"], "EmptyFieldRule", "auto");
 airquality = readtable("C:\Users\Ioannis\Desktop\GitHub\MATLAB\linear_regression\data\airquality.csv", opts);
 
 model = fitlm([airquality.Temp, airquality.Wind, airquality.Solar_R], airquality.Ozone)
+
 plot(model);
 plotResiduals(model,"probability");

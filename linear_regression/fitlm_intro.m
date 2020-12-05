@@ -92,7 +92,7 @@ slope = model1.Coefficients.Estimate(2);
 estimate = intercept + slope * v4;
 scatter(v4, v6);
 hold on;
-plot( v4, estimate );
+plot(v4, estimate);
 hold off;
 %% 
 % Geben Sie die Variable model in einem Diagramm aus (plot(model)).
