@@ -1,17 +1,15 @@
 %% 
-% Ein Landwirt mÃ¶chte 90 ha Land mit Kartoffeln und ZuckerrÃ¼ben bebauen. Kartoffeln 
+% Ein Landwirt möchte 90 ha Land mit Kartoffeln und Zuckerrüben bebauen. Kartoffeln 
 % erfordern einen Arbeitsaufwand von 3 Tagen je ha und einen Kapitalaufwand von 
-% 400 EUR je ha. ZuckerrÃ¼ben erfordern 4 Tage je ha und 200 EUR je ha. 
+% 400 EUR je ha. Zuckerrüben erfordern 4 Tage je ha und 200 EUR je ha. 
 % 
-% Wegen der BodenqualitÃ¤t mÃ¼ssen mindestens 50 ha ZuckerrÃ¼ben angebaut werden. 
-% FÃ¼r die Bewirtschaftung der 90 ha stehen maximal 360 Arbeitstage und maximal 
-% 24.000  EUR zur VerfÃ¼gung.
+% Wegen der Bodenqualität müssen mindestens 50 ha Zuckerrüben angebaut werden. 
+% Für die Bewirtschaftung der 90 ha stehen maximal 360 Arbeitstage und maximal 
+% 24.000  EUR zur Verfügung.
 % 
-% a) Welche Aufteilung des Landes muss gewaehlt werden, wenn 1 ha Kartoffeln 
-% einen Gewinn von 450 EUR und 1 ha Zuckerrueben einen Gewinn von 150 EUR bringen 
-% und der Gewinn maximal werden soll?
-% 
-% x1 = # ha Kartoffeln, x2 = # ha ZuckerrÃ¼ben
+% Welche Aufteilung des Landes muss gewaehlt werden, wenn 1 ha Kartoffeln einen 
+% Gewinn von 450 EUR und 1 ha Zuckerrueben einen Gewinn von 150 EUR bringen und 
+% der Gewinn maximal werden soll?
 
 x1 = optimvar("Kartoffeln", "LowerBound", 0);
 x2 = optimvar("Zuckerrueben", "LowerBound", 50);
